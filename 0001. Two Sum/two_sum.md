@@ -18,13 +18,14 @@ Because nums[0] + nums[1] == 9, we return [0, 1].
 -   <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>
 -   **Only one valid answer exists.**
 
-### Answer:
+### Solution:
 >   利用 **hash_map** 存放 `[ans:num]`，ans 為 key，num為當前遍歷的數字`ans = target - num`。  map 若不存在則存入，若已經存在則為解答。
 ```
 #include <unordered_map>
 #include <vector>
 
-std::vector<int> twoSum(std::vector<int>& nums, int target) {
+std::vector<int> twoSum(std::vector<int>& nums, int target) 
+{
     std::unordered_map<int, int> map;
     for (int i = 0; i < nums.size(); ++i) {
         if (map.count(nums[i]) > 0)
