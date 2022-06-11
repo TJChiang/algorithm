@@ -1,5 +1,6 @@
 # 704. Binary Search
 [LeetCode](https://leetcode.com/problems/binary-search/)
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md)
 
 有一個升冪的整數有序陣列 `nums`，以及一個 `target` 值。寫一個 function 找到 `nums` 中的 `target` 值。
 

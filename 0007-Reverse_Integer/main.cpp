@@ -1,3 +1,8 @@
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
 int reverse(int x) {
     int res = 0;
     while(x != 0) {
@@ -5,6 +10,15 @@ int reverse(int x) {
         res = res * 10 + (x % 10);
         x /= 10;
     }
-    
+
     return res;
+}
+
+int main()
+{
+    int x = 123;
+    int res = reverse(x);
+
+    cout << res << endl;
+    return 0;
 }

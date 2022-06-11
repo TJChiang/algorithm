@@ -1,4 +1,5 @@
 # 0001. Two Sum
+[LeetCode](https://leetcode.com/problems/two-sum/)
 
 >   Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.
 
@@ -24,13 +25,13 @@ Because nums[0] + nums[1] == 9, we return [0, 1].
 #include <unordered_map>
 #include <vector>
 
-std::vector<int> twoSum(std::vector<int>& nums, int target) 
+std::vector<int> twoSum(std::vector<int>& nums, int target)
 {
     std::unordered_map<int, int> map;
     for (int i = 0; i < nums.size(); ++i) {
         if (map.count(nums[i]) > 0)
             return {map[i], i};
-        
+
         map[target - i] = nums[i];
     }
 
