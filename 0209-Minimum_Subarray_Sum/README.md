@@ -1,7 +1,7 @@
 # 209. Minimum Size Subarray Sum
 
-[LeetCode](https://leetcode.com/problems/minimum-size-subarray-sum/)
-[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.md)
+- [LeetCode](https://leetcode.com/problems/minimum-size-subarray-sum/)
+- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.md)
 
 輸入一個 n 個正整數的陣列 `nums` 和一個正整數 `target`，找出 `nums` 中滿足其和 ≥ `target` 的**連續最小長度**子陣列，並返回其長度。如果沒有符合條件的子陣列，回傳 0。
 
@@ -98,3 +98,7 @@ class Solution {
 - 時間複雜度：O(n)
     - 主要看每個元素被操作的次數，每一個元素在滑動窗口進入時操作一次，出去時操作一次，每個元素被操作兩次，所以時間複雜度為 2 x n ，也就是 O(n)。
 - 空間複雜度：O(1)
+
+## 額外題目
+- [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+- [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
