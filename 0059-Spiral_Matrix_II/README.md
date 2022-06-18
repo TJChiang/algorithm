@@ -47,7 +47,7 @@ class Solution {
             // 當前 x 座標與 y 座標
             int sx, sy;
 
-            while (loop --) {
+            while (loop > 0) {
                 sx = start_x;
                 sy = start_y;
 
@@ -81,6 +81,8 @@ class Solution {
                 // 內圈起始座標為外圈的右斜方 (0,0) -> (1,1) -> (2,2)
                 start_x++;
                 start_y++;
+
+                loop--;
             }
 
             // 如果 n 為單數，矩陣最中間有單獨空格需要賦值
