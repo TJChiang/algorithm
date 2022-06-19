@@ -46,3 +46,28 @@ class Solution {
 - 時間複雜度： O(n)
 - 空間複雜度： O(1)
 
+
+## 反轉值的方法
+
+### 1. 申請額外記憶體
+```cpp
+int temp = s[i];
+s[i] = s[j];
+s[j] = temp;
+```
+
+### 2. 位元運算
+`^=` 為 XOR
+
+```
+x = a, y = b
+x = a xor b
+y = (a xor b) xor b = a
+x = (a xor b) xor y = (a xor b) xor a = b
+```
+
+```cpp
+s[i] ^= s[j];
+s[j] ^= s[i];
+s[i] ^= s[j];
+```
