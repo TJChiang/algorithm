@@ -36,3 +36,10 @@ Output: "We%20are%20happy."
 - 時間複雜度：O(n)
 - 空間複雜度：O(1)
 
+## 額外題目
+- [27.Remove Element](https://leetcode.com/problems/remove-element/)
+- [15.3Sum](https://leetcode.com/problems/3sum/)
+- [18.4Sum](https://leetcode.com/problems/4sum/)
+- [206.Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [142.Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+- [344.Reverse String](https://leetcode.com/problems/reverse-string/)
