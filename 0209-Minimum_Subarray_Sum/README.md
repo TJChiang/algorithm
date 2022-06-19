@@ -1,7 +1,11 @@
 # 209. Minimum Size Subarray Sum
 
-- [LeetCode](https://leetcode.com/problems/minimum-size-subarray-sum/)
-- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.md)
+###### tags: `Array`、`雙指針`、`滑動窗口`
+<br>
+
+[LeetCode](https://leetcode.com/problems/minimum-size-subarray-sum/)
+
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.md)
 
 輸入一個 n 個正整數的陣列 `nums` 和一個正整數 `target`，找出 `nums` 中滿足其和 ≥ `target` 的**連續最小長度**子陣列，並返回其長度。如果沒有符合條件的子陣列，回傳 0。
 

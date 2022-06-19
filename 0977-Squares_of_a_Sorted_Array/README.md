@@ -1,6 +1,11 @@
 # 0977 Squares of a Sorted Array
-- [LeetCode](https://leetcode.com/problems/squares-of-a-sorted-array/)
-- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.md)
+
+###### tags: `Array`、`雙指針`
+<br>
+
+[LeetCode](https://leetcode.com/problems/squares-of-a-sorted-array/)
+
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.md)
 
 有一組非降冪排序的整數陣列 `nums`，回傳每個數字的平方組成新陣列，且依非降冪排列。
 

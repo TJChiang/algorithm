@@ -1,7 +1,11 @@
 # 59. Spiral Matrix II
 
-- [LeetCode](https://leetcode.com/problems/spiral-matrix-ii/)
-- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.md)
+###### tags: `Array`、`區間`、`模擬`
+<br>
+
+[LeetCode](https://leetcode.com/problems/spiral-matrix-ii/)
+
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.md)
 
 有一個正整數 `n`，產生一個 `n x n` 的矩陣，1 到 n<sup>2</sup> 的值按照順時針螺旋排列填滿矩陣。
 ![螺旋矩陣](spiral_matrix_ii.jpeg)

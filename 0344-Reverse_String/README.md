@@ -1,7 +1,11 @@
 # 344. Reverse String
 
-- [LeetCode](https://leetcode.com/problems/reverse-string/)
-- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
+###### tags: `String`
+<br>
+
+[LeetCode](https://leetcode.com/problems/reverse-string/)
+
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
 
 寫一個反轉字串的 function，輸入的字串為一個字元陣列 `s`。
 

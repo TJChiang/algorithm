@@ -1,7 +1,11 @@
 # 541. Reverse String II
 
-- [LeetCode](https://leetcode.com/problems/reverse-string-ii/)
-- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.md)
+###### tags: `String`
+<br>
+
+[LeetCode](https://leetcode.com/problems/reverse-string-ii/)
+
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.md)
 
 有一個字串 `s` 和一個整數 `k`，從字串開始，每隔 2k 個字的前 k 個字進行反轉。
 

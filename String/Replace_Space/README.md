@@ -1,5 +1,6 @@
 # 替換空格
-###### tags: `string`、`雙指針`
+
+###### tags: `String`、`雙指針`
 <br>
 
 [LeetCode](https://leetcode.cn/problems/ti-huan-kong-ge-lcof/)

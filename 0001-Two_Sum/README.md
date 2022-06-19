@@ -1,4 +1,8 @@
 # 0001. Two Sum
+
+###### tags: `Map`
+<br>
+
 [LeetCode](https://leetcode.com/problems/two-sum/)
 
 >   Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.
@@ -21,7 +25,8 @@ Because nums[0] + nums[1] == 9, we return [0, 1].
 
 ### Solution:
 >   利用 **hash_map** 存放 `[ans:num]`，ans 為 key，num為當前遍歷的數字`ans = target - num`。  map 若不存在則存入，若已經存在則為解答。
-```
+
+```cpp
 #include <unordered_map>
 #include <vector>
 

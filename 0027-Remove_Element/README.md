@@ -1,6 +1,11 @@
 # 27. Remove Element
-- [LeetCode](https://leetcode.com/problems/remove-element/)
-- [參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.md)
+
+###### tags: `Array`、`雙指針`、`快慢指針`
+<br>
+
+[LeetCode](https://leetcode.com/problems/remove-element/)
+
+[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.md)
 
 有一個整數陣列 `nums` 和一個整數值 `val`，必須**原地**刪除所有 `nums` 中的 `val` 值，並返回移除後的陣列長度。
 
