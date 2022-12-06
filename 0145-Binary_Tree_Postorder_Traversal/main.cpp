@@ -2,6 +2,8 @@
 #include <vector>
 #include <cstdio>
 #include <cstdlib>
+#include <stack>
+#include <algorithm>
 
 using namespace std;
 
@@ -14,7 +16,7 @@ struct TreeNode {
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-class Solution {
+class Solution1 {
     public:
         void traversal(TreeNode* cur, vector<int>& vec) {
             if (cur == NULL) return;
@@ -29,15 +31,38 @@ class Solution {
         }
 };
 
+class Solution2 {
+    public:
+        vector<int> postorderTraversal(TreeNode* root) {
+            vector<int> result;
+            stack<TreeNode*> st;
+
+            if (root == NULL) return result;
+            st.push(root);
+            while (!st.empty()) {
+                TreeNode* node = st.top();
+                st.pop();
+                result.push_back(node->val);
+                if (node->left) st.push(node->left);
+                if (node->right) st.push(node->right);
+            }
+
+            reverse(result.begin(), result.end());
+            return result;
+        }
+};
+
 int main(int argc, char* argv[])
 {
-    Solution sol;
+    Solution1 sol1;
+    Solution2 sol2;
     vector<int> result;
     TreeNode *root = new TreeNode(1);
     root->right = new TreeNode(2);
     root->right->left = new TreeNode(3);
 
-    result = sol.postorderTraversal(root);
+    // result = sol1.postorderTraversal(root);
+    result = sol2.postorderTraversal(root);
 
     for (auto it = result.begin(); it != result.end(); it++) {
         cout << *it << "  ";
