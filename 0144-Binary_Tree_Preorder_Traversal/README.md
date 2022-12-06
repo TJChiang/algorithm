@@ -66,7 +66,7 @@ public:
 
 ### Solution 2 - 迭代
 
-![前序迭代](Preorder_Interation.gif)
+![前序迭代](Preorder_Iteration.gif)
 
 ```CPP
 class Solution2 {
