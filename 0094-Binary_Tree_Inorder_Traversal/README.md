@@ -63,3 +63,40 @@ public:
     }
 };
 ```
+
+### Solution 2 - 迭代
+
+![中序迭代](Inorder_Iteration.gif)
+
+```CPP
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+};
+
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        stack<TreeNode*> st;
+        TreeNode* cur = root;
+        while (cur || !st.empty()) {
+            if (cur) {
+                st.push(cur);
+                cur = cur->left;
+            } else {
+                cur = st.top();
+                st.pop();
+                result.push_back(cur->val);
+                cur = cur->right;
+            }
+        }
+
+        return result;
+    }
+};
+```
