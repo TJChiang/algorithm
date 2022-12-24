@@ -86,7 +86,7 @@ public:
     {
         if (cur == NULL) return;
         if (result.size() == depth) result.push_back(vector<int>());
-        result[depth].push_back(cur);
+        result[depth].push_back(cur->val);
         order(cur->left, result, depth + 1);
         order(cur->right, result, depth + 1);
     }
