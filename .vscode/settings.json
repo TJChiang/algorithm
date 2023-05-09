@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.blade.php": "blade",
+        "*.php": "php",
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
@@ -49,6 +51,29 @@
         "__hash_table": "cpp",
         "__split_buffer": "cpp",
         "bitset": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "iostream": "cpp",
+        "cstring": "cpp",
+        "__bit_reference": "cpp",
+        "__bits": "cpp",
+        "__config": "cpp",
+        "__debug": "cpp",
+        "__errc": "cpp",
+        "__locale": "cpp",
+        "__mutex_base": "cpp",
+        "__node_handle": "cpp",
+        "__threading_support": "cpp",
+        "__tuple": "cpp",
+        "__verbose_abort": "cpp",
+        "ctime": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "mutex": "cpp",
+        "ratio": "cpp",
+        "stack": "cpp",
+        "variant": "cpp",
+        "__nullptr": "cpp",
+        "__string": "cpp",
+        "chrono": "cpp"
     }
 }
