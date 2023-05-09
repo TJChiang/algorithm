@@ -31,6 +31,7 @@
             "command": "/opt/homebrew/bin/g++-11",
             "args": [
                 "-fdiagnostics-color=always",
+                "--std=c++17",
                 "-g",
                 "${file}",
                 "-o",
@@ -43,7 +44,7 @@
                 "$gcc"
             ],
             "group": "build",
-            "detail": "編譯器：/opt/homebrew/bin/g++-11"
+            "detail": "編譯器：/opt/homebrew/bin/g++"
         },
     ]
 }
