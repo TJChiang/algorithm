@@ -1,15 +1,14 @@
 #include <iostream>
 #include <vector>
-#include <cstdio>
 #include <cstdlib>
 
 using namespace std;
 
 class Solution {
     public:
-        vector<vector<int>> generateMatrix(int n) {
+        vector<vector<int> > generateMatrix(int n) {
             // 二維陣列
-            vector<vector<int>> res(n, vector<int>(n, 0));
+            vector<vector<int> > res(n, vector<int>(n, 0));
 
             // 每一圈的起始 x 座標與 y 座標
             int start_x = 0, start_y = 0;
