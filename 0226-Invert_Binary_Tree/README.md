@@ -1,6 +1,6 @@
 # 226. Invert Binary Tree
 
-###### tags: `tag`
+###### tags: `binary tree`
 <br>
 
 [LeetCode](https://leetcode.com/problems/invert-binary-tree/)

@@ -28,7 +28,7 @@ func isSymmetricRecursion(root *TreeNode) bool {
 		return true
 	}
 
-	return isSymmetricRecursion(root)
+	return compare(root.Left, root.Right)
 }
 
 func isSymmetricIteration(root *TreeNode) bool {
