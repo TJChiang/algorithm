@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstring>
 #include <vector>
 
 using namespace std;
@@ -15,5 +14,11 @@ class Solution {
 
 int main()
 {
+    vector<char> input = {'h', 'e', 'l', 'l', 'o'};
+    Solution* sol = new Solution();
+    sol->reverseString(input);
+    for (auto i : input) {
+        cout << i << " ";
+    }
     return 0;
 }
