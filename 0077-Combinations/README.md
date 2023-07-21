@@ -1,6 +1,6 @@
 # 77. Combinations
 
-###### tags: `回溯`
+###### tags: `回溯`、`back tracking`
 <br>
 
 [LeetCode](https://leetcode.com/problems/combinations/)
