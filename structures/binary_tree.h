@@ -4,15 +4,16 @@
 #include <vector>
 #include "tree_node.h"
 
-class binary_tree
+class BinaryTree
 {
 private:
     TreeNode* root;
     int size = 0;
     void inorder_traversal(TreeNode* cur, std::vector<int>& vec);
 public:
-    binary_tree(std::vector<int> input);
-    ~binary_tree();
+    BinaryTree(std::vector<int> input);
+    ~BinaryTree();
+    TreeNode* get_root();
     void show_inorder();
     std::vector<int> get_inorder_result();
 };

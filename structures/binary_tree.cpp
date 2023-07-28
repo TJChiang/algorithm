@@ -3,7 +3,7 @@
 #include <queue>
 #include "tree_node.h"
 
-class binary_tree
+class BinaryTree
 {
 private:
     TreeNode* root;
@@ -17,7 +17,7 @@ private:
         inorder_traversal(cur->right, vec);
     }
 public:
-    binary_tree(std::vector<int> input)
+    BinaryTree(std::vector<int> input)
     {
         if (input.size() == 0) {
             return;
@@ -47,7 +47,13 @@ public:
             i++;
         }
     }
-    ~binary_tree() {}
+    ~BinaryTree() {}
+
+    TreeNode* get_root()
+    {
+        TreeNode* p = root;
+        return p;
+    }
 
     void show_inorder()
     {
