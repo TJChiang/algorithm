@@ -7,8 +7,8 @@
             "command": "/usr/bin/clang++",
             "args": [
                 "-fdiagnostics-color=always",
-                "--std=c++17",
-                "--stdlib=libc++",
+                "-std=c++17",
+                "-stdlib=libc++",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out",
@@ -31,7 +31,7 @@
             "command": "/opt/homebrew/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
-                "--std=c++17",
+                "-std=c++17",
                 "-g",
                 "${file}",
                 "-o",
