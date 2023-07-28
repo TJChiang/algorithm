@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/a.out",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
             "args": [
                 "-fdiagnostics-color=always",
                 "-std=c++17",
@@ -26,7 +26,7 @@
                     "value": "Debug"
                 }
             ],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "C/C++: Build with clang++"
         }
