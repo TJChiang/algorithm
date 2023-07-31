@@ -22,7 +22,7 @@ int main()
 {
     vector<int> arr = {2,7,11,15};
     int target = 9;
-    arr = twoSum(arr, 9);
+    arr = twoSum(arr, target);
     for (auto it = arr.begin(); it != arr.end(); ++it) {
         cout << *it << ' ';
         cout << endl;
