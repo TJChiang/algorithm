@@ -22,8 +22,6 @@ public:
             bfs(n, k, i + 1);
             path.pop_back();
         }
-
-        return;
     }
 
     vector<vector<int>> combine(int n, int k) {
@@ -38,9 +36,9 @@ int main(int argc, char* argv[])
 
     vector<vector<int>> result = sol.combine(4, 2);
 
-    for (auto it = result.begin(); it != result.end(); it++) {
-        for (auto sub = (*it).begin(); sub != (*it).end(); sub++) {
-            cout << *sub << " ";
+    for (auto & it : result) {
+        for (int & sub : it) {
+            cout << sub << " ";
         }
         cout << endl;
     }

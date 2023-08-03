@@ -1,5 +1,5 @@
-#ifndef _structure_binary_tree_
-#define _structure_binary_tree_
+#ifndef structure_binary_tree_
+#define structure_binary_tree_
 
 #include <vector>
 #include "tree_node.h"
@@ -11,7 +11,7 @@ private:
     int size = 0;
     void inorder_traversal(TreeNode* cur, std::vector<int>& vec);
 public:
-    BinaryTree(std::vector<int> input);
+    explicit BinaryTree(std::vector<int> input);
     ~BinaryTree();
     TreeNode* get_root();
     void show_inorder();

@@ -11,15 +11,15 @@ private:
 
     void inorder_traversal(TreeNode* cur, std::vector<int>& vec)
     {
-        if (cur == NULL) return;
+        if (cur == nullptr) return;
         inorder_traversal(cur->left, vec);
         vec.push_back(cur->val);
         inorder_traversal(cur->right, vec);
     }
 public:
-    BinaryTree(std::vector<int> input)
+    explicit BinaryTree(std::vector<int> input)
     {
-        if (input.size() == 0) {
+        if (input.empty()) {
             return;
         }
 
@@ -32,14 +32,14 @@ public:
         while (i < input.size()) {
             TreeNode* node = queue.front();
             queue.pop();
-            if (i < input.size() && input[i] != _INT_NULL_) {
+            if (i < input.size() && input[i] != INT_NULL_) {
                 node->left = new TreeNode(input[i]);
                 queue.push(node->left);
                 size++;
             }
             i++;
 
-            if (i < input.size() && input[i] != _INT_NULL_) {
+            if (i < input.size() && input[i] != INT_NULL_) {
                 node->right = new TreeNode(input[i]);
                 queue.push(node->right);
                 size++;
@@ -47,7 +47,7 @@ public:
             i++;
         }
     }
-    ~BinaryTree() {}
+    ~BinaryTree() = default;
 
     TreeNode* get_root()
     {
@@ -62,8 +62,6 @@ public:
         for (auto it : result) {
             std::cout << it << " ";
         }
-
-        return;
     }
 
     std::vector<int> get_inorder_result()
