@@ -35,7 +35,8 @@ int main()
     };
 
     for (auto question : questions) {
-        cout << sol.isBalanced(question.get_root()) << endl;
+        string result = sol.isBalanced(question.get_root()) ? "true" : "false";
+        cout << result << endl;
     }
 
     return 0;
