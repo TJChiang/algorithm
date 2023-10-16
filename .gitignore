@@ -1,8 +1,11 @@
 *.out
 *.dSYM
 
+.cache
+.fleet
 .idea
 playground/
 
+go.sum
 /cmake-build-debug
 /build
