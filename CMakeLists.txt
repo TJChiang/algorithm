@@ -1,4 +1,3 @@
-# https://zhuanlan.zhihu.com/p/598229845
 cmake_minimum_required(VERSION 3.5)
 project(leetcode-exercise)
 
@@ -19,3 +18,4 @@ foreach (FILE_PATH ${CPP_RESOURCE})
                 ${structures_files}
                 )
 endforeach ()
+# https://zhuanlan.zhihu.com/p/598229845
