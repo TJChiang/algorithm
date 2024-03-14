@@ -16,8 +16,8 @@ int reverse(int x) {
 
 int main()
 {
-    int x = 123;
-    int res = reverse(x);
+    int const& x = 123;
+    int const& res = reverse(x);
 
     cout << res << endl;
     return 0;

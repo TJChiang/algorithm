@@ -4,6 +4,7 @@
 .cache
 .fleet
 .idea
+**/.DS_Store
 playground/
 
 go.sum

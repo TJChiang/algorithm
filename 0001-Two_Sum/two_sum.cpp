@@ -21,10 +21,10 @@ std::vector<int> twoSum(std::vector<int>& nums, int target)
 int main()
 {
     vector<int> arr = {2,7,11,15};
-    int target = 9;
+    int const& target = 9;
     arr = twoSum(arr, target);
-    for (auto it = arr.begin(); it != arr.end(); ++it) {
-        cout << *it << ' ';
+    for (int const& it : arr) {
+        cout << it << ' ';
         cout << endl;
     }
     return 0;

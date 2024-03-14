@@ -8,7 +8,7 @@ public:
     vector<int> path;
     vector<vector<int>> result;
 
-    void bfs(int n, int k, int startIndex) {
+    void bfs(int const& n, int const& k, int const& startIndex) {
         if (path.size() == k) {
             result.push_back(path);
             return;
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     vector<vector<int>> result = sol.combine(4, 2);
 
     for (auto & it : result) {
-        for (int & sub : it) {
+        for (int const& sub : it) {
             cout << sub << " ";
         }
         cout << endl;

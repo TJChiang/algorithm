@@ -29,15 +29,15 @@ public:
         int digit = digits[index] - '0';
         string letters = letterMap[digit];
 
-        for (int i = 0; i < letters.size(); i ++) {
-            s.push_back(letters[i]);
+        for (char letter : letters) {
+            s.push_back(letter);
             bfs(digits, index + 1);
             s.pop_back();
         }
     }
 
-    vector<string> letterCombinations(string digits) {
-        if (digits.size() == 0) return result;
+    vector<string> letterCombinations(const string& digits) {
+        if (digits.empty()) return result;
         s.clear();
         result.clear();
 
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     Solution sol;
     vector<string> result = sol.letterCombinations("23");
 
-    for (auto it : result) {
+    for (const auto& it : result) {
         cout << it << " ";
     }
 

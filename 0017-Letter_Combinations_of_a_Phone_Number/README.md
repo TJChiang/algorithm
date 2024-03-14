@@ -5,8 +5,6 @@
 
 [LeetCode](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
-[參考](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0017.%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88.md)
-
 有一個僅包含數字 `2-9` 的字符，回傳所有的字母組合。
 
 數字與字母的對照圖如下(與電話按鍵相同)。**Note:** 數字 1 沒有對應任何字母。
