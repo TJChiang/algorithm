@@ -1,22 +1,14 @@
 #include <iostream>
 #include <stack>
 #include <queue>
+#include "../structures/tree_node.h"
 
 using namespace std;
-
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
-};
 
 class Solution {
 public:
     TreeNode* invertTreeRecursion(TreeNode* root) {
-        if (root == NULL) return root;
+        if (root == nullptr) return root;
         swap(root->left, root->right);
         invertTreeRecursion(root->left);
         invertTreeRecursion(root->right);
@@ -24,15 +16,15 @@ public:
     }
 
     TreeNode* invertTreeInteration(TreeNode* root) {
-        if (root == NULL) return root;
+        if (root == nullptr) return root;
         stack<TreeNode*> st;
         st.push(root);
         while (!st.empty()) {
             TreeNode* node = st.top();
             st.pop();
             swap(node->left, node->right);
-            if (node->right != NULL) st.push(node->right);
-            if (node->left != NULL) st.push(node->left);
+            if (node->right != nullptr) st.push(node->right);
+            if (node->left != nullptr) st.push(node->left);
         }
 
         return root;
@@ -59,8 +51,8 @@ int main()
             TreeNode* node = que.front();
             que.pop();
             cout << node->val << " ";
-            if (node->left != NULL) que.push(node->left);
-            if (node->right != NULL) que.push(node->right);
+            if (node->left != nullptr) que.push(node->left);
+            if (node->right != nullptr) que.push(node->right);
         }
     }
 
