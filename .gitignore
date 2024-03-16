@@ -7,6 +7,5 @@
 **/.DS_Store
 playground/
 
-go.sum
 /cmake-build-debug
 /build
