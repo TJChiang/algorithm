@@ -1,6 +1,7 @@
 *.out
 *.dSYM
 
+.build
 .cache
 .fleet
 .idea
