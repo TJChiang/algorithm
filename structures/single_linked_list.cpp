@@ -16,6 +16,18 @@ namespace structures {
         size = 1;
     }
 
+    SingleLinkedList::SingleLinkedList(LinkedNode *root): size(0) {
+        if (root == nullptr) return;
+
+        head = root;
+        const LinkedNode *cur = root;
+        while (cur != nullptr) {
+            size++;
+            cur = cur->next;
+        }
+    }
+
+
     void SingleLinkedList::push_front(const int x) {
         head = new LinkedNode(x, head);
         size++;
@@ -121,6 +133,9 @@ namespace structures {
         head = prev;
     }
 
+    LinkedNode *SingleLinkedList::getRoot() {
+        return this->head;
+    }
 
     void SingleLinkedList::print() const {
         const LinkedNode* cur = head;
@@ -129,7 +144,8 @@ namespace structures {
         }
 
         while (cur != nullptr) {
-            std::cout << cur->val << "\t";
+            std::cout << cur->val;
+            if (cur->next != nullptr) std::cout << " -> ";
             cur = cur->next;
         }
         std::cout << std::endl;

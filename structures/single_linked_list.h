@@ -11,6 +11,7 @@ namespace structures {
     public:
         SingleLinkedList();
         explicit SingleLinkedList(int val);
+        explicit SingleLinkedList(LinkedNode* root);
         void push_front(int x);
         void push_back(int x);
         void insert(int index, int val);
@@ -18,6 +19,7 @@ namespace structures {
         void remove(int index);
         void clear();
         void reverse();
+        LinkedNode *getRoot();
         void print() const;
     };
 
