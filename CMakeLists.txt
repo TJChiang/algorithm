@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD  17)
 
 file(GLOB_RECURSE CPP_RESOURCE
         [0-9][0-9][0-9][0-9]-*/*.cpp
+        Other_Problems/**/*.cpp
         )
 
 file(GLOB_RECURSE structures_files CONFIGURE_DEPENDS
