@@ -21,9 +21,33 @@
                 "$gcc"
             ],
             "group": {
-                "kind": "build",
-                "isDefault": true
+                "kind": "build"
             }
+        },
+        {
+            "type": "shell",
+            "label": "CMake Build Debug",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-S",
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/cmake-build-debug"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Build CMake Files",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/cmake-build-debug",
+                "--target",
+                "all"
+            ],
+            "group": "build"
         },
         {
             "type": "shell",
