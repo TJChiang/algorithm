@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Create cmake-build-debug",
+            "program": "cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-S",
+                "$PROJECT_DIR$",
+                "-B",
+                "$PROJECT_DIR$/cmake-build-debug"
+            ],
+        },
+        {
+            "type": "command",
+            "name": "Build cmake files",
+            "program": "cmake",
+            "args": [
+                "--build",
+                "$PROJECT_DIR$/cmake-build-debug",
+                "--target",
+                "all"
+            ],
+        },
+        {
+            "type": "command",
+            "name": "Run",
+            "program": "$PROJECT_DIR$/cmake-build-debug/$FILE_NAME_NO_EXT$",
+        }
+        
+    ]
+}
