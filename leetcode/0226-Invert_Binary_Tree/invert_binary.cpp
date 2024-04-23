@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <queue>
-#include "../structures/tree_node.h"
+#include "../../structures/tree_node.h"
 
 using namespace std;
 

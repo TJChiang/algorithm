@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "../structures/tree_node.h"
-#include "../structures/binary_tree.h"
+#include "../../structures/tree_node.h"
+#include "../../structures/binary_tree.h"
 
 using namespace std;
 

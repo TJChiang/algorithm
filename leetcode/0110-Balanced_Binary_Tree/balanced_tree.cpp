@@ -1,8 +1,8 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
-#include "../structures/tree_node.h"
-#include "../structures/binary_tree.h"
+#include "../../structures/tree_node.h"
+#include "../../structures/binary_tree.h"
 
 using namespace std;
 
