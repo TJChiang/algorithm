@@ -9,7 +9,7 @@
 
 每兩個節點交換彼此的順序，並回傳頭節點。
 
-![交換一對節點](./leetcode_0024.jpeg)
+![交換一對節點](leetcode_0024.jpeg)
 
 **範例 1**
 ```
@@ -34,7 +34,7 @@ Output: [1]
 
 ## 思路
 
-![解題思路](./0024-Swap_Nodes_in_Pairs.drawio.png)
+![解題思路](0024-Swap_Nodes_in_Pairs.drawio.png)
 
 **注意**：由於兩個節點一組，迴圈判斷為 `cur->next` & `cur->next->next`
 - 頭節點是虛擬節點，實際上第一個節點是 cur->next

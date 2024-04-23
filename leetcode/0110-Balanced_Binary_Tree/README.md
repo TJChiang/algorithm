@@ -13,7 +13,7 @@
 
 **範例 1**
 
-![110_1](./balance_1.jpg)
+![110_1](balance_1.jpg)
 
 ```
 Input: root = [3,9,20,null,null,15,7]
@@ -22,7 +22,7 @@ Output: true
 
 **範例 2**
 
-![110_2](./balance_2.jpg)
+![110_2](balance_2.jpg)
 
 ```
 Input: root = [1,2,2,3,3,null,null,4,4]

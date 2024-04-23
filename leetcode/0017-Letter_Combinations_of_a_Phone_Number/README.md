@@ -9,7 +9,7 @@
 
 數字與字母的對照圖如下(與電話按鍵相同)。**Note:** 數字 1 沒有對應任何字母。
 
-![telephone keypad](./1200px-telephone-keypad2svg.png)
+![telephone keypad](1200px-telephone-keypad2svg.png)
 
 
 **範例 1**
