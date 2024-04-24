@@ -34,6 +34,10 @@ BinaryTree::BinaryTree(std::vector<int> input) {
     }
 }
 
+BinaryTree::BinaryTree(TreeNode* root) {
+    this->root = root;
+}
+
 BinaryTree::~BinaryTree() = default;
 
 void BinaryTree::inorder_traversal(TreeNode* cur, std::vector<int>& vec) {
@@ -57,9 +61,36 @@ void BinaryTree::postorder_traversal(TreeNode* cur, std::vector<int>& vec) {
     vec.push_back(cur->val);
 }
 
+void BinaryTree::levelorder_traversal(TreeNode* cur, std::vector<int>& vec) {
+    std::queue<TreeNode*> que;
+    if (cur != nullptr) que.push(cur);
+
+    while (!que.empty()) {
+        int size = que.size();
+        for (int i = 0; i < size; i++) {
+            TreeNode* node = que.front();
+            que.pop();
+            // 為了顯示 null 值
+            if (node == nullptr) {
+                vec.push_back(INT_NULL_);
+                continue;
+            } else {
+                vec.push_back(node->val);
+            }
+            if (node->left == nullptr && node->right == nullptr) continue;
+            que.push(node->left);
+            que.push(node->right);
+        }
+    }
+}
+
 void BinaryTree::show_result(const std::vector<int>& result) {
     for (int const it : result) {
-        std::cout << it << " ";
+        if (it == INT_NULL_) {
+            std::cout << "null ";
+        } else {
+            std::cout << it << " ";
+        }
     }
 }
 
@@ -83,6 +114,14 @@ std::vector<int> BinaryTree::get_postorder_result() {
     TreeNode* p = root;
     std::vector<int> result;
     postorder_traversal(p, result);
+
+    return result;
+}
+
+std::vector<int> BinaryTree::get_levelorder_result() {
+    TreeNode* p = root;
+    std::vector<int> result;
+    levelorder_traversal(p, result);
 
     return result;
 }
