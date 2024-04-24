@@ -4,6 +4,7 @@
 .build
 .cache
 .idea
+.fleet/
 **/.DS_Store
 playground/
 
