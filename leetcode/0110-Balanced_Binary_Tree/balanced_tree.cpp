@@ -1,14 +1,14 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
-#include "../../structures/tree_node.h"
-#include "../../structures/binary_tree.h"
+#include "../../structures/binary_tree/tree_node.h"
+#include "../../structures/binary_tree/binary_tree.h"
 
 using namespace std;
 
 class Solution {
 public:
-    int getHeight(TreeNode* node) {
+    int getHeight(structures::TreeNode* node) {
         if (node == nullptr) {
             return 0;
         }
@@ -20,7 +20,7 @@ public:
 
         return abs(left - right) > 1 ? -1 : 1 + max(left, right);
     }
-    bool isBalanced(TreeNode* root) {
+    bool isBalanced(structures::TreeNode* root) {
         return getHeight(root) != -1;
     }
 };
@@ -28,10 +28,10 @@ public:
 int main()
 {
     Solution sol;
-    vector<BinaryTree> questions = {
-            BinaryTree(vector<int> {3, 9, 20, INT_NULL_, INT_NULL_, 15, 7}),
-            BinaryTree(vector<int> {1, 2, 2, 3, 3, INT_NULL_, INT_NULL_, 4, 4}),
-            BinaryTree(vector<int> {}),
+    vector<structures::BinaryTree> questions = {
+            structures::BinaryTree(vector<int> {3, 9, 20, INT_NULL_, INT_NULL_, 15, 7}),
+            structures::BinaryTree(vector<int> {1, 2, 2, 3, 3, INT_NULL_, INT_NULL_, 4, 4}),
+            structures::BinaryTree(vector<int> {}),
     };
 
     for (auto question : questions) {

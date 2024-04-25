@@ -9,8 +9,8 @@ file(GLOB_RECURSE CPP_RESOURCE
         )
 
 file(GLOB_RECURSE structures_files CONFIGURE_DEPENDS
-        structures/*.cpp
-        structures/*.h
+        structures/**/*.cpp
+        structures/**/*.h
         )
 
 foreach (FILE_PATH ${CPP_RESOURCE})

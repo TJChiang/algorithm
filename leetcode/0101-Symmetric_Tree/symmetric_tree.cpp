@@ -1,12 +1,12 @@
 #include <iostream>
-#include "../../structures/tree_node.h"
-#include "../../structures/binary_tree.h"
+#include "../../structures/binary_tree/tree_node.h"
+#include "../../structures/binary_tree/binary_tree.h"
 
 using namespace std;
 
 class Solution {
 private:
-    bool compare(TreeNode const* left, TreeNode const* right) {
+    bool compare(structures::TreeNode const* left, structures::TreeNode const* right) {
         if (left == nullptr && right != nullptr) return false;
         else if (left != nullptr && right == nullptr) return false;
         else if (left == nullptr && right == nullptr) return true;
@@ -15,7 +15,7 @@ private:
         return compare(left->right, right->left) && compare(left->left, right->right);
     }
 public:
-    bool isSymmetric(TreeNode const* root) {
+    bool isSymmetric(structures::TreeNode const* root) {
         if (root == nullptr) return true;
         return compare(root->left, root->right);
     }
@@ -24,9 +24,9 @@ public:
 int main(int argc, char* argv[])
 {
     Solution sol;
-    BinaryTree ex1(vector<int> {1,2,2,3,4,4,3});
+    structures::BinaryTree ex1(vector<int> {1,2,2,3,4,4,3});
     bool const result1 = sol.isSymmetric(ex1.get_root());
-    BinaryTree ex2(vector<int> {1,2,2, INT_NULL_,3,INT_NULL_,3});
+    structures::BinaryTree ex2(vector<int> {1,2,2, INT_NULL_,3,INT_NULL_,3});
     bool const result2 = sol.isSymmetric(ex2.get_root());
 
     cout << "result1: ";

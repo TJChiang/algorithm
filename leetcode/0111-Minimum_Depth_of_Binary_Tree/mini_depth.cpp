@@ -1,14 +1,14 @@
 #include <iostream>
 #include <queue>
-#include "../../structures/binary_tree.h"
-#include "../../structures/tree_node.h"
+#include "../../structures/binary_tree/binary_tree.h"
+#include "../../structures/binary_tree/tree_node.h"
 
 using namespace std;
 
 class Solution {
 public:
     // 後序
-    int minDepth(TreeNode* root) {
+    int minDepth(structures::TreeNode* root) {
         if (root == nullptr) return 0;
         const int left_depth = minDepth(root->left);
         const int right_depth = minDepth(root->right);
@@ -17,9 +17,9 @@ public:
         return min(left_depth, right_depth) + 1;
     }
 
-    int minDepthIteration(TreeNode* root) {
+    int minDepthIteration(structures::TreeNode* root) {
         if (root == nullptr) return 0;
-        queue<TreeNode*> que;
+        queue<structures::TreeNode*> que;
         que.push(root);
         int depth = 0;
 
@@ -29,7 +29,7 @@ public:
             depth++;
             for (int i = 0; i < length; i++)
             {
-                const TreeNode* node = que.front();
+                const structures::TreeNode* node = que.front();
                 que.pop();
                 if (node->left == nullptr && node->right == nullptr) return depth;
                 if (node->left != nullptr) que.push(node->left);
@@ -42,8 +42,8 @@ public:
 
 int main(int argc, char* argv[])
 {
-    BinaryTree bt1({3,9,20,INT_NULL_,INT_NULL_,15,7});
-    BinaryTree bt2({2,INT_NULL_,3,INT_NULL_,4,INT_NULL_,5,INT_NULL_,6});
+    structures::BinaryTree bt1({3,9,20,INT_NULL_,INT_NULL_,15,7});
+    structures::BinaryTree bt2({2,INT_NULL_,3,INT_NULL_,4,INT_NULL_,5,INT_NULL_,6});
     Solution sol;
 
     cout << "Result1: " << sol.minDepth(bt1.get_root()) << endl;

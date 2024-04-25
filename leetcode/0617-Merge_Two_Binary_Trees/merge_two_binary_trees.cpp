@@ -6,12 +6,12 @@
 // Otherwise, the NOT null node will be used as the node of the new tree.
 #include <iostream>
 #include <vector>
-#include "../../structures/tree_node.h"
-#include "../../structures/binary_tree.h"
+#include "../../structures/binary_tree/tree_node.h"
+#include "../../structures/binary_tree/binary_tree.h"
 
 class Solution {
 public:
-    TreeNode* mergeTreesRecursion(TreeNode* root1, TreeNode* root2) {
+    structures::TreeNode* mergeTreesRecursion(structures::TreeNode* root1, structures::TreeNode* root2) {
         if (root1 == nullptr) return root2;
         if (root2 == nullptr) return root1;
         // 前序
@@ -23,10 +23,10 @@ public:
 };
 
 int main() {
-    BinaryTree root1(std::vector<int> {1,3,2,5});
-    BinaryTree root2(std::vector<int> {2,1,3,INT_NULL_,4,INT_NULL_,7});
+    structures::BinaryTree root1(std::vector<int> {1,3,2,5});
+    structures::BinaryTree root2(std::vector<int> {2,1,3,INT_NULL_,4,INT_NULL_,7});
     Solution sol;
-    BinaryTree result(sol.mergeTreesRecursion(root1.get_root(), root2.get_root()));
+    structures::BinaryTree result(sol.mergeTreesRecursion(root1.get_root(), root2.get_root()));
     result.show_result(result.get_levelorder_result());
     std::cout << std::endl;
     return 0;

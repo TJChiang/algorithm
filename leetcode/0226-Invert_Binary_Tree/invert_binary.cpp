@@ -1,13 +1,13 @@
 #include <iostream>
 #include <stack>
 #include <queue>
-#include "../../structures/tree_node.h"
+#include "../../structures/binary_tree/tree_node.h"
 
 using namespace std;
 
 class Solution {
 public:
-    TreeNode* invertTreeRecursion(TreeNode* root) {
+    structures::TreeNode* invertTreeRecursion(structures::TreeNode* root) {
         if (root == nullptr) return root;
         swap(root->left, root->right);
         invertTreeRecursion(root->left);
@@ -15,12 +15,12 @@ public:
         return root;
     }
 
-    TreeNode* invertTreeInteration(TreeNode* root) {
+    structures::TreeNode* invertTreeInteration(structures::TreeNode* root) {
         if (root == nullptr) return root;
-        stack<TreeNode*> st;
+        stack<structures::TreeNode*> st;
         st.push(root);
         while (!st.empty()) {
-            TreeNode* node = st.top();
+            structures::TreeNode* node = st.top();
             st.pop();
             swap(node->left, node->right);
             if (node->right != nullptr) st.push(node->right);
@@ -33,22 +33,22 @@ public:
 
 int main()
 {
-    TreeNode* root = new TreeNode(
+    structures::TreeNode* root = new structures::TreeNode(
         4,
-        new TreeNode(2, new TreeNode(1), new TreeNode(3)),
-        new TreeNode(7, new TreeNode(6), new TreeNode(9))
+        new structures::TreeNode(2, new structures::TreeNode(1), new structures::TreeNode(3)),
+        new structures::TreeNode(7, new structures::TreeNode(6), new structures::TreeNode(9))
     );
     Solution* sol = new Solution();
-    TreeNode* result = sol->invertTreeRecursion(root);
-    // TreeNode* result = sol->invertTreeInteration(root);
+    structures::TreeNode* result = sol->invertTreeRecursion(root);
+    // structures::TreeNode* result = sol->invertTreeInteration(root);
 
-    queue<TreeNode*> que;
+    queue<structures::TreeNode*> que;
     que.push(result);
 
     while (!que.empty()) {
         int size = que.size();
         for (int i = 0; i < size; i++) {
-            TreeNode* node = que.front();
+            structures::TreeNode* node = que.front();
             que.pop();
             cout << node->val << " ";
             if (node->left != nullptr) que.push(node->left);
