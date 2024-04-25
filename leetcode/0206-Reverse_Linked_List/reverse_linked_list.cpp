@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../../structures/linked_list/linked_node.h"
-#include "../../structures/linked_list/single_linked_list.h"
+#include "linked_list/linked_node.h"
+#include "linked_list/single_linked_list.h"
 
 class Solution {
 public:
