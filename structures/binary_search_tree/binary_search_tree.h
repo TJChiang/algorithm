@@ -5,15 +5,16 @@
 #ifndef BINARY_SEARCH_TREE_H
 #define BINARY_SEARCH_TREE_H
 #include "binary_tree/tree_node.h"
+#define INT_NULL_ INT_MIN
 
 namespace structures {
 
 class BinarySearchTree {
     TreeNode* root;
-    void _insert(TreeNode* node, int val);
-    void _remove(TreeNode* node, int val);
-    TreeNode* _find(TreeNode* node, int val);
+    TreeNode* _insert(TreeNode* node, int val);
+    TreeNode* _remove(TreeNode* node, int val);
     TreeNode* _find_min_node(TreeNode* node);
+    void _clear(TreeNode* node);
 public:
     BinarySearchTree();
     explicit BinarySearchTree(int val);

@@ -20,86 +20,76 @@ namespace structures {
         root = new TreeNode(val);
     }
 
-    void BinarySearchTree::_insert(TreeNode *node, int const val) {
-        if (val < node->val) {
-            if (node->left != nullptr)
-                _insert(node->left, val);
-            else
-                node->left = new TreeNode(val);
-        } else {
-            if (node->right != nullptr)
-                _insert(node->right, val);
-            else
-                node->right = new TreeNode(val);
-        }
+    TreeNode* BinarySearchTree::_insert(TreeNode* root, int const val) {
+        if (root == nullptr) return new TreeNode(val);
+
+        if (val < root->val)
+            root->left = _insert(root->left, val);
+        else if (val > root->val)
+            root->right = _insert(root->right, val);
+
+        // no duplicate value, so return root when val is equal to root->val
+        return root;
     }
 
-    void BinarySearchTree::insert(int const val) {
-        if (root == nullptr) {
-            root = new TreeNode(val);
-            return;
-        }
-
-        _insert(root, val);
+    void BinarySearchTree::insert(int val) {
+        root = _insert(root, val);
     }
 
     TreeNode* BinarySearchTree::_find_min_node(TreeNode *node) {
         if (node == nullptr) return node;
-        if (node->left == nullptr) return node;
+        while (node->left != nullptr) {
+            node = node->left;
+        }
 
-        return _find_min_node(node->left);
+        return node;
     }
 
-    void BinarySearchTree::_remove(TreeNode *node, int val) {
+    TreeNode* BinarySearchTree::_remove(TreeNode *node, int val) {
         if (node == nullptr) return;
 
-        TreeNode* cur = node;
-
-        // 持續往右搜尋
-        if (val > node->val) {
-            _remove(node->right, val);
-            return;
-        }
-        // 持續往左搜尋
-        if (val < node->val) {
-            _remove(node->left, val);
-            return;
-        }
-
-        // 找到指定的值
-        // 如果是子節點，直接刪除即可
-        if (node->left == nullptr && node->right == nullptr) {
-            delete node;
-            node = nullptr;
-            return;
-        }
-        // 只有左節點
-        if (node->right == nullptr) {
-            const TreeNode* temp = node;
-            node = node->left;
-            delete temp;
-            return;
-        }
-
-        // 只有右節點
-        if (node->left == nullptr) {
-            const TreeNode* temp = node;
-            node = node->right;
-            delete temp;
-            return;
+        if (node->val == val) {
+            // 找到指定的值
+            // 如果是子節點，直接刪除即可
+            if (node->left == nullptr && node->right == nullptr) {
+                delete node;
+                return nullptr;
+            }
+            // 只有左節點
+            else if (node->right == nullptr) {
+                TreeNode* temp = node->left;
+                delete node;
+                return temp;
+            }
+            // 只有右節點
+            else if (node->left == nullptr) {
+                TreeNode* temp = node->right;
+                delete node;
+                return temp;
+            }
+            // 左右節點都有
+            else {
+                TreeNode* minNode = _find_min_node(node->right);
+                minNode->left = node->left;
+                TreeNode* temp = node;
+                node = node->right;
+                delete temp;
+                return node;
+            }
         }
 
-        // 左右節點都有
-        const TreeNode* temp = _find_min_node(node->right);
-        node->val = temp->val;
-     }
+        if (val < node->val) node->left = _remove(node->left, val);
+        if (val > node->val) node->right = _remove(node->right, val);
 
-    void BinarySearchTree::remove(int val) {
-        _remove(root, val);
+        return node;
     }
 
-    TreeNode *BinarySearchTree::_find(TreeNode *node, int val) {
-        TreeNode* cur = node;
+    void BinarySearchTree::remove(int val) {
+        root = _remove(root, val);
+    }
+
+    TreeNode *BinarySearchTree::find(int const val) {
+        TreeNode* cur = root;
         while (cur != nullptr) {
             if (cur->val == val) return cur;
             if (val > cur->val) cur = cur->right;
@@ -109,12 +99,8 @@ namespace structures {
         return nullptr;
     }
 
-    TreeNode *BinarySearchTree::find(int const val) {
-        return _find(root, val);
-    }
-
     int BinarySearchTree::max_value() {
-        if (root == nullptr) return NULL;
+        if (root == nullptr) return INT_NULL_;
 
         const TreeNode* cur = root;
         while (cur->right != nullptr) {
@@ -125,7 +111,7 @@ namespace structures {
     }
 
     int BinarySearchTree::min_value() {
-        if (root == nullptr) return NULL;
+        if (root == nullptr) return INT_NULL_;
 
         const TreeNode* cur = root;
         while (cur->left != nullptr) {
@@ -135,22 +121,17 @@ namespace structures {
         return cur->val;
     }
 
+    void BinarySearchTree::_clear(TreeNode* node) {
+        if (node == nullptr) return;
+
+        if (node->left != nullptr) _clear(node->left);
+        if (node->right != nullptr) _clear(node->right);
+        delete node;
+        node = nullptr;
+    }
+
     void BinarySearchTree::clear() {
-        std::vector<TreeNode*> stack;
-
-        if (root != nullptr) stack.push_back(root);
-
-        while (!stack.empty()) {
-            const TreeNode* node = stack.back();
-            stack.pop_back();
-
-            if (node->left) stack.push_back(node->left);
-            if (node->right) stack.push_back(node->right);
-
-            delete node;
-        }
-
-        root = nullptr;
+        _clear(root);
     }
 
     bool BinarySearchTree::empty() {
