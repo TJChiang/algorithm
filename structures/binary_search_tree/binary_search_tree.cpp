@@ -46,7 +46,7 @@ namespace structures {
     }
 
     TreeNode* BinarySearchTree::_remove(TreeNode *node, int val) {
-        if (node == nullptr) return;
+        if (node == nullptr) return nullptr;
 
         if (node->val == val) {
             // 找到指定的值
