@@ -1,6 +1,6 @@
 # 1408. String Matching in an Array
 
-###### tags: `string` 、 `array` 、 `string matching` 、 `KMP`
+###### tags: `string` 、 `array` 、 `string matching` 、 `KMP` 、 `trie`
 <br>
 
 [LeetCode](https://leetcode.com/problems/string-matching-in-an-array/)
