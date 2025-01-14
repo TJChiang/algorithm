@@ -3,7 +3,7 @@
 ###### tags: `tag`
 <br>
 
-[LeetCode](https://leetcode.com/problemset/all/)
+[LeetCode]()
 
 [參考](https://github.com/youngyangyang04/leetcode-master)
 
