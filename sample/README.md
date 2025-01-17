@@ -1,7 +1,6 @@
 # xxx. Title
 
 ###### tags: `tag`
-<br>
 
 [LeetCode]()
 
