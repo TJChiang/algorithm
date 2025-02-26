@@ -10,3 +10,7 @@ services:
       #   target: /app/.venv
       # https://stackoverflow.com/a/37898591
       - /app/.venv
+      - python-packages:/usr/local/lib/python3.13/site-packages/
+
+volumes:
+  python-packages:
