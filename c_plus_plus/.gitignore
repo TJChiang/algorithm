@@ -1,0 +1,10 @@
+*.out
+*.dSYM
+
+.build
+.cache
+.idea
+.fleet/
+
+/cmake-build-debug
+/build

@@ -1,12 +1,5 @@
-*.out
-*.dSYM
-
 .build
 .cache
 .idea
 .fleet/
 **/.DS_Store
-playground/
-
-/cmake-build-debug
-/build
