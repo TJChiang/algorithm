@@ -1,0 +1,16 @@
+services:
+  python:
+    image: python:3.13-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+      # exclude .venv from volume
+      # https://stackoverflow.com/questions/53570499/make-docker-compose-ignore-folder-within-volume/71911280#71911280
+      # - type: tmpfs
+      #   target: /app/.venv
+      # https://stackoverflow.com/a/37898591
+      - /app/.venv
+      - python-packages:/usr/local/lib/python3.13/site-packages/
+
+volumes:
+  python-packages:
