@@ -1,7 +1,7 @@
 package tjchiang.leetcode.L0167_Two_Sum_II;
 
 /**
- * <a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/">leetcode</a>
+ * <a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/">167. Two Sum II - Input Array Is Sorted</a>
  */
 public class TwoSumII {
     public int[] solve(int[] numbers, int target) {
