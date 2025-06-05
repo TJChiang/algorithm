@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Solution:
+class BuyStock:
     def solve(self, prices: List[int]) -> int:
         if len(prices) < 1 or len(prices) > 10 ** 5:
             return -1

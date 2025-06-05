@@ -1,9 +1,9 @@
 import pytest
 
-from solution import Solution
+from buy_stock import BuyStock
 
 
-class TestSolution:
+class TestBuyStock:
     @pytest.mark.parametrize("prices, expected", [
         ([7, 1, 5, 3, 6, 4], 5),
         ([7, 6, 4, 3, 1], 0),
@@ -16,5 +16,5 @@ class TestSolution:
         ([0] * (10 ** 5), 0),  # Minimum price constraints
     ])
     def test_solve(self, prices, expected):
-        target: Solution = Solution()
+        target: BuyStock = BuyStock()
         assert target.solve(prices) == expected

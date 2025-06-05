@@ -1,10 +1,10 @@
-class Solution:
+class LexicographicallyString:
     def solve(self, s1: str, s2: str, baseStr: str) -> str:
         parent: dict = {}
 
         def find(x):
             if x != parent.setdefault(x, x):
-                parent[x] = find(parent[x]) # Optimize: path compression
+                parent[x] = find(parent[x])  # Optimize: path compression
             return parent[x]
 
         for x, y in zip(s1, s2):
@@ -13,7 +13,7 @@ class Solution:
             if parentX == parentY:
                 continue
             if parentX > parentY:
-                parent[parentX] = parentY # Optimize: union by rank => keep the smaller one as parent
+                parent[parentX] = parentY  # Optimize: union by rank => keep the smaller one as parent
             else:
                 parent[parentY] = parentX
 
