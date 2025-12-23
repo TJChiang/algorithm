@@ -1,0 +1,29 @@
+{
+  "name": "algorithm-python",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "python",
+  "workspaceFolder": "/app",
+  "runServices": [
+    "python"
+  ],
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "python -m venv .venv && ./.venv/bin/pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/app/.venv/bin/python",
+        "python.testing.pytestEnabled": true,
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestArgs": [
+          "leetcode"
+        ]
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
+}

@@ -1,12 +1,13 @@
 # algorithm-python
 
-
 ## 開發環境
+
+### Docker 執行環境
 
 1. 進入 container 執行 python
 
 ```bash
-docker compose rum --rm -it python bash
+docker compose run --rm -it python bash
 ```
 
 2. 建立虛擬環境
@@ -33,3 +34,7 @@ pip install -r requirements.txt
 ```bash
 deactivate
 ```
+
+### Docker 開發環境
+
+`cmd + shift + P` 輸入 `Dev Containers: Open Folder in Container...` ，選擇 python
