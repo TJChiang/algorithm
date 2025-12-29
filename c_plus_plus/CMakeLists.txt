@@ -15,7 +15,9 @@ file(GLOB_RECURSE structures_files CONFIGURE_DEPENDS
         )
 
 foreach (FILE_PATH ${CPP_RESOURCE})
-        STRING(REGEX REPLACE ".+./(.+)\\..*" "\\1" FILE_NAME ${FILE_PATH})
+        # 從路徑中取得不含副檔名的檔案名稱
+        get_filename_component(FILE_NAME ${FILE_PATH} NAME_WE)
+
         add_executable(${FILE_NAME} ${FILE_PATH}
                 ${structures_files}
                 )
