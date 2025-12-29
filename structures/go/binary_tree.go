@@ -1,15 +1,11 @@
 package structures
 
-import (
-	"algorithm-go/structures"
-)
-
 type BinaryTree struct {
-	root *structures.TreeNode
+	root *TreeNode
 	size int
 }
 
-func (bt *BinaryTree) GetRoot() *structures.TreeNode {
+func (bt *BinaryTree) GetRoot() *TreeNode {
 	return bt.root
 }
 
@@ -26,8 +22,8 @@ func New(input []int) *BinaryTree {
 		return nil
 	}
 
-	var queue []*structures.TreeNode
-	root := &structures.TreeNode{Val: input[0]}
+	var queue []*TreeNode
+	root := &TreeNode{Val: input[0]}
 	size := 1
 	queue = append(queue, root)
 
@@ -35,15 +31,15 @@ func New(input []int) *BinaryTree {
 	for i < len(input) {
 		node := queue[1]
 		queue = queue[1:]
-		if i < len(input) && input[i] != structures.INT_NULL {
-			node.Left = &structures.TreeNode{Val: input[i]}
+		if i < len(input) && input[i] != INT_NULL {
+			node.Left = &TreeNode{Val: input[i]}
 			queue = append(queue, node.Left)
 			size++
 		}
 		i++
 
-		if i < len(input) && input[i] != structures.INT_NULL {
-			node.Right = &structures.TreeNode{Val: input[i]}
+		if i < len(input) && input[i] != INT_NULL {
+			node.Right = &TreeNode{Val: input[i]}
 			queue = append(queue, node.Right)
 			size++
 		}

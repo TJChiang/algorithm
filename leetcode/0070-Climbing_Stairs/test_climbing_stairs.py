@@ -1,6 +1,6 @@
 import pytest
 
-from .climbing_stairs import ClimbingStairs
+from climbing_stairs import ClimbingStairs
 
 
 class TestClimbingStairs:

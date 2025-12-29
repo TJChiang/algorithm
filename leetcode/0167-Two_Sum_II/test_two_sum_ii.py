@@ -1,6 +1,6 @@
 import pytest
 
-from .two_sum_ii import TwoSumII
+from two_sum_ii import TwoSumII
 
 class TestTwoSumII:
     @pytest.mark.parametrize("numbers, target_value, expected", [

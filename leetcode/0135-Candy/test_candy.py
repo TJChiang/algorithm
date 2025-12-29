@@ -1,6 +1,6 @@
 import pytest
 
-from .candy import Candy
+from candy import Candy
 
 
 class TestCandy:

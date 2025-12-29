@@ -1,5 +1,5 @@
 import pytest
-from data_structure.array import Array
+from structures.python.array import Array
 
 class TestArray:
     @pytest.mark.parametrize("capacity, size, is_empty", [

@@ -2,7 +2,7 @@ from typing import List
 
 import pytest
 
-from search import Search
+from binary_search import BinarySearch
 
 
 class TestSearch:
@@ -16,11 +16,11 @@ class TestSearch:
             ([1, 2, 3, 4, 5], 5, 4),
             ([1], 1, 0),
             ([1], 2, -1),
-            ([], 1, -1)
-        ]
+            ([], 1, -1),
+        ],
     )
     def test_solve_origin(self, nums: List[int], input_target, expected: int):
-        target = Search()
+        target = BinarySearch()
         assert target.solve_origin(nums, input_target) == expected
 
     @pytest.mark.parametrize(
@@ -32,9 +32,9 @@ class TestSearch:
             ([1, 2, 3, 4, 5], 5, 4),
             ([1], 1, 0),
             ([1], 2, -1),
-            ([], 1, -1)
-        ]
+            ([], 1, -1),
+        ],
     )
     def test_solve(self, nums: List[int], input_target, expected: int):
-        target = Search()
+        target = BinarySearch()
         assert target.solve(nums, input_target) == expected

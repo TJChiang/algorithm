@@ -3,3 +3,14 @@
 .idea
 .fleet/
 **/.DS_Store
+
+# C/C++
+*.out
+*.dSYM
+/cmake-build-debug
+/build
+
+# Python
+.venv
+.pytest_cache
+__pycache__/

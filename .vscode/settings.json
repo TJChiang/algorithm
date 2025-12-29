@@ -76,5 +76,11 @@
         "__string": "cpp",
         "chrono": "cpp",
         "charconv": "cpp"
-    }
+    },
+    "python.testing.pytestArgs": [
+        "tests",
+        "leetcode"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }

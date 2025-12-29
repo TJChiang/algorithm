@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug current file (CMake)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/cmake-build-debug/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/cmake-build-debug",
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "CMake: Build current file target"
+        },
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/.build/${fileDirnameBasename}/${fileBasenameNoExtension}.out",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c++17",
+                "-stdlib=libc++",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/.build/${fileDirnameBasename}/${fileBasenameNoExtension}.out"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/.build/${fileDirnameBasename}",
+            "environment": [
+                {
+                    "name": "config",
+                    "value": "Debug"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: Build with clang++"
+        },
+        {
+            "name": "Run C++ in terminal",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/.build/${fileDirnameBasename}/${fileBasenameNoExtension}.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/.build/${fileDirnameBasename}",
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: Build with clang++"
+        }
+    ]
+}

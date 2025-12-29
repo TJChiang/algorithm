@@ -3,7 +3,7 @@ from typing import List
 
 # Time Complexity: O(log n)
 # Space Complexity: O(1)
-class Search:
+class BinarySearch:
     def solve_origin(self, nums: List[int], target: int) -> int:
         left = 0
         right = len(nums) - 1
