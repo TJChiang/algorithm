@@ -88,7 +88,8 @@ namespace structures {
         root = _remove(root, val);
     }
 
-    TreeNode *BinarySearchTree::find(int const val) {
+    TreeNode *BinarySearchTree::find(int const val) const
+    {
         TreeNode* cur = root;
         while (cur != nullptr) {
             if (cur->val == val) return cur;
@@ -99,7 +100,8 @@ namespace structures {
         return nullptr;
     }
 
-    int BinarySearchTree::max_value() {
+    int BinarySearchTree::max_value() const
+    {
         if (root == nullptr) return INT_NULL_;
 
         const TreeNode* cur = root;
@@ -110,7 +112,8 @@ namespace structures {
         return cur->val;
     }
 
-    int BinarySearchTree::min_value() {
+    int BinarySearchTree::min_value() const
+    {
         if (root == nullptr) return INT_NULL_;
 
         const TreeNode* cur = root;
@@ -121,7 +124,7 @@ namespace structures {
         return cur->val;
     }
 
-    void BinarySearchTree::_clear(TreeNode* node) {
+    void BinarySearchTree::_clear(const TreeNode* node) {
         if (node == nullptr) return;
 
         if (node->left != nullptr) _clear(node->left);
@@ -130,11 +133,13 @@ namespace structures {
         node = nullptr;
     }
 
-    void BinarySearchTree::clear() {
+    void BinarySearchTree::clear() const
+    {
         _clear(root);
     }
 
-    bool BinarySearchTree::empty() {
+    bool BinarySearchTree::empty() const
+    {
         return root == nullptr;
     }
 } // structures

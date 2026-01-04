@@ -27,7 +27,7 @@ int main() {
     structures::BinaryTree root2(std::vector<int> {2,1,3,INT_NULL_,4,INT_NULL_,7});
     Solution sol;
     structures::BinaryTree result(sol.mergeTreesRecursion(root1.get_root(), root2.get_root()));
-    result.show_result(result.get_levelorder_result());
+    structures::BinaryTree::show_result(result.get_levelorder_result());
     std::cout << std::endl;
     return 0;
 }

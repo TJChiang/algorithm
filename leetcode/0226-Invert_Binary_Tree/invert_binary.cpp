@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-    structures::TreeNode* invertTreeRecursion(structures::TreeNode* root) {
+    static structures::TreeNode* invertTreeRecursion(structures::TreeNode* root) {
         if (root == nullptr) return root;
         swap(root->left, root->right);
         invertTreeRecursion(root->left);
@@ -15,7 +15,7 @@ public:
         return root;
     }
 
-    structures::TreeNode* invertTreeInteration(structures::TreeNode* root) {
+    static structures::TreeNode* invertTreeInteration(structures::TreeNode* root) {
         if (root == nullptr) return root;
         stack<structures::TreeNode*> st;
         st.push(root);
@@ -33,20 +33,19 @@ public:
 
 int main()
 {
-    structures::TreeNode* root = new structures::TreeNode(
+    auto* root = new structures::TreeNode(
         4,
         new structures::TreeNode(2, new structures::TreeNode(1), new structures::TreeNode(3)),
         new structures::TreeNode(7, new structures::TreeNode(6), new structures::TreeNode(9))
     );
-    Solution* sol = new Solution();
-    structures::TreeNode* result = sol->invertTreeRecursion(root);
-    // structures::TreeNode* result = sol->invertTreeInteration(root);
+    structures::TreeNode* result = Solution::invertTreeRecursion(root);
+    // structures::TreeNode* result = Solution::invertTreeInteration(root);
 
     queue<structures::TreeNode*> que;
     que.push(result);
 
     while (!que.empty()) {
-        int size = que.size();
+        const int size = que.size();
         for (int i = 0; i < size; i++) {
             structures::TreeNode* node = que.front();
             que.pop();
@@ -55,6 +54,8 @@ int main()
             if (node->right != nullptr) que.push(node->right);
         }
     }
+
+    delete(root);
 
     return 0;
 }

@@ -11,10 +11,10 @@ namespace structures {
 
 class BinarySearchTree {
     TreeNode* root;
-    TreeNode* _insert(TreeNode* node, int val);
+    static TreeNode* _insert(TreeNode* node, int val);
     TreeNode* _remove(TreeNode* node, int val);
-    TreeNode* _find_min_node(TreeNode* node);
-    void _clear(TreeNode* node);
+    static TreeNode* _find_min_node(TreeNode* node);
+    static void _clear(const TreeNode* node);
 public:
     BinarySearchTree();
     explicit BinarySearchTree(int val);
@@ -24,11 +24,11 @@ public:
 
     void insert(int val);
     void remove(int val);
-    TreeNode* find(int val);
-    int max_value();
-    int min_value();
-    void clear();
-    bool empty();
+    TreeNode* find(int val) const;
+    int max_value() const;
+    int min_value() const;
+    void clear() const;
+    bool empty() const;
 };
 
 } // structures
