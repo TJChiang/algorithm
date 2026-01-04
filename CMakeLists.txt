@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 4.0)
 project(leetcode-exercise)
 
 set(CMAKE_CXX_STANDARD  17)
-include_directories(${PROJECT_SOURCE_DIR}/structures)
+include_directories(${PROJECT_SOURCE_DIR}/structures/cpp)
 
 file(GLOB_RECURSE CPP_RESOURCE
         leetcode/[0-9][0-9][0-9][0-9]-*/*.cpp
@@ -10,8 +10,8 @@ file(GLOB_RECURSE CPP_RESOURCE
         )
 
 file(GLOB_RECURSE structures_files CONFIGURE_DEPENDS
-        structures/**/*.cpp
-        structures/**/*.h
+        structures/cpp/**/*.cpp
+        structures/cpp/**/*.h
         )
 
 foreach (FILE_PATH ${CPP_RESOURCE})

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
-#include "../../structures/binary_tree/binary_tree.h"
-#include "../../structures/binary_tree/tree_node.h"
+#include "binary_tree/binary_tree.h"
+#include "binary_tree/tree_node.h"
 
 using namespace std;
 
