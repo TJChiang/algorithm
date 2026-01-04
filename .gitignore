@@ -8,9 +8,20 @@
 *.out
 *.dSYM
 /cmake-build-debug
+/cmake-build-run
 /build
 
 # Python
 .venv
 .pytest_cache
 __pycache__/
+
+# Java
+.gradle
+build_java
+!gradle/wrapper/gradle-wrapper.jar
+bin
+*.iws
+*.iml
+*.ipr
+out
