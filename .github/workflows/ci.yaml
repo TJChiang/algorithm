@@ -2,20 +2,20 @@ name: Run Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   java:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           sparse-checkout: |
             .github
             java
       - name: Cache Gradle Wrapper
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/wrapper
@@ -24,10 +24,10 @@ jobs:
           restore-keys: |
             gradle-${{ runner.os }}-
       - name: Set up JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
-          java-version: '23'
-          distribution: 'temurin'
+          java-version: "25"
+          distribution: "corretto"
       - name: Run Gradle tests
         run: |
           cd java
@@ -37,42 +37,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            .github
-            go
+        uses: actions/checkout@v6
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
-          go-version: '1.24'
+          go-version: "1.25"
       - name: Install dependencies
-        run: |
-          cd go
-          go mod tidy
+        run: go mod tidy
       - name: Run Go leetcode tests
-        run: |
-          cd go
-          go test ./leetcode/...
+        run: go test ./leetcode/...
 
   python:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            .github
-            python
+        uses: actions/checkout@v6
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.13'
+          python-version: "3.13"
       - name: Install dependencies
-        run: |
-          cd python
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
       - name: Run Python tests
-        run: |
-          cd python
-          pytest
+        run: pytest
