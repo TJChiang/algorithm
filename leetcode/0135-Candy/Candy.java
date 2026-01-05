@@ -1,5 +1,3 @@
-package tjchiang.leetcode.L0135_Candy;
-
 import java.util.Arrays;
 
 /**
@@ -8,7 +6,7 @@ import java.util.Arrays;
 public class Candy {
 
     public int candy(int[] ratings) {
-        //  constraints
+        // constraints
         if (isInvalidInput(ratings)) {
             return 0;
         }
@@ -30,19 +28,19 @@ public class Candy {
         // traverse from the end
         for (int i = n - 1; i > 0; --i) {
             if (ratings[i - 1] > ratings[i]) {
-                // the child with a higher rating should have at least higher candies than the neighbor child
+                // the child with a higher rating should have at least higher candies than the
+                // neighbor child
                 candies[i - 1] = Math.max(candies[i - 1], candies[i] + 1);
             }
             sum += candies[i - 1];
         }
 
-        // candies[n - 1] is the last child because sum += candies[i - 1] starts from i = n - 1
+        // candies[n - 1] is the last child because sum += candies[i - 1] starts from i
+        // = n - 1
         return sum + candies[n - 1];
     }
 
     private boolean isInvalidInput(int[] ratings) {
-        return ratings == null
-                || ratings.length == 0
-                || ratings.length > 2 * Math.pow(10, 4);
+        return ratings == null || ratings.length == 0 || ratings.length > 2 * Math.pow(10, 4);
     }
 }

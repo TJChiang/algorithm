@@ -1,5 +1,3 @@
-package tjchiang.structures.linkedList;
-
 public class Node {
 
     public int val;

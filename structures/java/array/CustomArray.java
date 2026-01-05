@@ -1,18 +1,16 @@
-package tjchiang.structures.array;
-
-public class GenericArray<T> {
-    private final T[] data;
+public class CustomArray {
+    private final int[] data;
     private int size;
 
-    public GenericArray(int capacity) {
-        this.data = (T[]) new Object[capacity];
+    public CustomArray(int capacity) {
+        this.data = new int[capacity];
         this.size = 0;
     }
 
-    public GenericArray(T[] objects) {
-        this.data = (T[]) new Object[objects.length];
-        this.size = objects.length;
-        System.arraycopy(objects, 0, this.data, 0, objects.length);
+    public CustomArray(int[] initialData) {
+        this.data = new int[initialData.length];
+        System.arraycopy(initialData, 0, this.data, 0, initialData.length);
+        this.size = initialData.length;
     }
 
     /**
@@ -21,7 +19,7 @@ public class GenericArray<T> {
      * @param value the value to add
      * @throws IndexOutOfBoundsException if the array is full
      */
-    public void push(T value) {
+    public void push(int value) {
         this.insert(this.size, value);
     }
 
@@ -30,9 +28,10 @@ public class GenericArray<T> {
      *
      * @param index the index to insert the value at
      * @param value the value to insert
-     * @throws IndexOutOfBoundsException if the index is out of bounds or if the array is full
+     * @throws IndexOutOfBoundsException if the index is out of bounds or if the
+     *                                   array is full
      */
-    public void insert(int index, T value) {
+    public void insert(int index, int value) {
         checkIfArraySizeIsFull();
         if (index < 0 || index > this.size) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
@@ -51,7 +50,7 @@ public class GenericArray<T> {
      * @param index the index to update the value from
      * @throws IndexOutOfBoundsException if the index is out of bounds
      */
-    public void update(int index, T value) {
+    public void update(int index, int value) {
         checkIfIndexValid(index);
 
         this.data[index] = value;
@@ -63,14 +62,14 @@ public class GenericArray<T> {
      * @param index the index to get the value at
      * @throws IndexOutOfBoundsException if the index is out of bounds
      */
-    public T get(int index) {
+    public int get(int index) {
         checkIfIndexValid(index);
         return this.data[index];
     }
 
-    public int indexOf(T value) {
+    public int indexOf(int value) {
         for (int i = 0; i < this.size; ++i) {
-            if (this.data[i].equals(value)) {
+            if (this.data[i] == value) {
                 return i;
             }
         }
@@ -98,16 +97,16 @@ public class GenericArray<T> {
         return this.size == 0;
     }
 
-    public String toString() {
-        StringBuilder builder = new StringBuilder("[");
+    public void printAll() {
+        System.out.print("[");
         for (int i = 0; i < size; ++i) {
-            builder.append(data[i]);
+            System.out.print(data[i]);
             if (i < size - 1) {
-                builder.append(", ");
+                System.out.print(", ");
             }
         }
-        builder.append("]");
-        return builder.toString();
+        System.out.print("]");
+        System.out.println();
     }
 
     private void checkIfIndexValid(int index) {

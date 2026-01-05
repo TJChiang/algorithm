@@ -5,34 +5,6 @@ on:
     branches: [main]
 
 jobs:
-  java:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-        with:
-          sparse-checkout: |
-            .github
-            java
-      - name: Cache Gradle Wrapper
-        uses: actions/cache@v5
-        with:
-          path: |
-            ~/.gradle/wrapper
-            ~/.gradle/caches
-          key: gradle-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
-          restore-keys: |
-            gradle-${{ runner.os }}-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: "25"
-          distribution: "corretto"
-      - name: Run Gradle tests
-        run: |
-          cd java
-          ./gradlew test
-
   go:
     runs-on: ubuntu-latest
     steps:

@@ -1,18 +1,16 @@
-package tjchiang.structures.array;
-
-public class CustomArray {
-    private final int[] data;
+public class GenericArray<T> {
+    private final T[] data;
     private int size;
 
-    public CustomArray(int capacity) {
-        this.data = new int[capacity];
+    public GenericArray(int capacity) {
+        this.data = (T[]) new Object[capacity];
         this.size = 0;
     }
 
-    public CustomArray(int[] initialData) {
-        this.data = new int[initialData.length];
-        System.arraycopy(initialData, 0, this.data, 0, initialData.length);
-        this.size = initialData.length;
+    public GenericArray(T[] objects) {
+        this.data = (T[]) new Object[objects.length];
+        this.size = objects.length;
+        System.arraycopy(objects, 0, this.data, 0, objects.length);
     }
 
     /**
@@ -21,7 +19,7 @@ public class CustomArray {
      * @param value the value to add
      * @throws IndexOutOfBoundsException if the array is full
      */
-    public void push(int value) {
+    public void push(T value) {
         this.insert(this.size, value);
     }
 
@@ -30,9 +28,10 @@ public class CustomArray {
      *
      * @param index the index to insert the value at
      * @param value the value to insert
-     * @throws IndexOutOfBoundsException if the index is out of bounds or if the array is full
+     * @throws IndexOutOfBoundsException if the index is out of bounds or if the
+     *                                   array is full
      */
-    public void insert(int index, int value) {
+    public void insert(int index, T value) {
         checkIfArraySizeIsFull();
         if (index < 0 || index > this.size) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
@@ -51,7 +50,7 @@ public class CustomArray {
      * @param index the index to update the value from
      * @throws IndexOutOfBoundsException if the index is out of bounds
      */
-    public void update(int index, int value) {
+    public void update(int index, T value) {
         checkIfIndexValid(index);
 
         this.data[index] = value;
@@ -63,14 +62,14 @@ public class CustomArray {
      * @param index the index to get the value at
      * @throws IndexOutOfBoundsException if the index is out of bounds
      */
-    public int get(int index) {
+    public T get(int index) {
         checkIfIndexValid(index);
         return this.data[index];
     }
 
-    public int indexOf(int value) {
+    public int indexOf(T value) {
         for (int i = 0; i < this.size; ++i) {
-            if (this.data[i] == value) {
+            if (this.data[i].equals(value)) {
                 return i;
             }
         }
@@ -98,16 +97,16 @@ public class CustomArray {
         return this.size == 0;
     }
 
-    public void printAll() {
-        System.out.print("[");
+    public String toString() {
+        StringBuilder builder = new StringBuilder("[");
         for (int i = 0; i < size; ++i) {
-            System.out.print(data[i]);
+            builder.append(data[i]);
             if (i < size - 1) {
-                System.out.print(", ");
+                builder.append(", ");
             }
         }
-        System.out.print("]");
-        System.out.println();
+        builder.append("]");
+        return builder.toString();
     }
 
     private void checkIfIndexValid(int index) {

@@ -1,5 +1,3 @@
-package tjchiang.leetcode.L0003_Longest_Substring_Without_Repeating_Characters;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -8,8 +6,7 @@ import java.util.Set;
 public class LongestSubstring {
 
     /**
-     * Time complexity: O(n)
-     * </br>
+     * Time complexity: O(n) </br>
      * Space complexity: O(1)
      */
     public int solveBySet(String s) {
@@ -32,8 +29,7 @@ public class LongestSubstring {
     }
 
     /**
-     * Time complexity: O(n)
-     * </br>
+     * Time complexity: O(n) </br>
      * Space complexity: O(1)
      */
     public int solveByLastIndex(String s) {

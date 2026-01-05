@@ -1,8 +1,5 @@
-package tjchiang.leetcode.L1061_Lexicographically_Smallest_Equivalent_String;
 
-import tjchiang.algorithm.UnionFind;
-
-public class Solution {
+public class LexicographicallyString {
     public String solve(String s1, String s2, String baseStr) {
         UnionFind uf = new UnionFind(26);
         for (int i = 0; i < s1.length(); i++) {

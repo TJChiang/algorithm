@@ -1,5 +1,3 @@
-package tjchiang.structures.linkedList;
-
 import java.util.List;
 
 public class SinglyLinkedList {
@@ -34,11 +32,13 @@ public class SinglyLinkedList {
     }
 
     public Node find(int value) {
-        if (this.head == null) return null;
+        if (this.head == null)
+            return null;
 
         Node curr = this.head;
         while (curr != null) {
-            if (curr.val == value) return curr;
+            if (curr.val == value)
+                return curr;
             curr = curr.next;
         }
 
@@ -46,12 +46,14 @@ public class SinglyLinkedList {
     }
 
     public Node at(int index) {
-        if (index < 0 || this.head == null) return null;
+        if (index < 0 || this.head == null)
+            return null;
 
         Node curr = this.head;
         int count = 0;
         while (curr != null) {
-            if (count == index) return curr;
+            if (count == index)
+                return curr;
             curr = curr.next;
             count++;
         }
@@ -99,7 +101,8 @@ public class SinglyLinkedList {
         if (index == 0) {
             newNode.next = this.head;
             this.head = newNode;
-            if (this.tail == null) this.tail = newNode;
+            if (this.tail == null)
+                this.tail = newNode;
             this.size++;
             return;
         }
@@ -118,7 +121,8 @@ public class SinglyLinkedList {
         this.size++;
         newNode.next = curr.next;
         curr.next = newNode;
-        if (newNode.next == null) this.tail = newNode;
+        if (newNode.next == null)
+            this.tail = newNode;
     }
 
     public void insert(Node node, int index) {
@@ -138,7 +142,8 @@ public class SinglyLinkedList {
             }
             temp.next = this.head;
             this.head = node;
-            if (this.tail == null) this.tail = temp;
+            if (this.tail == null)
+                this.tail = temp;
             return;
         }
 
@@ -161,15 +166,18 @@ public class SinglyLinkedList {
         }
         temp.next = curr.next;
         curr.next = node;
-        if (temp.next == null) this.tail = temp;
+        if (temp.next == null)
+            this.tail = temp;
     }
 
     public void remove(int value) {
-        if (this.head == null) return;
+        if (this.head == null)
+            return;
 
         if (this.head.val == value) {
             this.head = this.head.next;
-            if (this.head == null) this.tail = null;
+            if (this.head == null)
+                this.tail = null;
             this.size--;
             return;
         }
@@ -178,7 +186,8 @@ public class SinglyLinkedList {
         while (curr.next != null) {
             if (curr.next.val == value) {
                 curr.next = curr.next.next;
-                if (curr.next == null) this.tail = curr;
+                if (curr.next == null)
+                    this.tail = curr;
                 this.size--;
                 return;
             }
@@ -204,7 +213,8 @@ public class SinglyLinkedList {
             }
 
             curr.next = curr.next.next;
-            if (curr.next == null) this.tail = curr;
+            if (curr.next == null)
+                this.tail = curr;
             this.size--;
         }
     }
