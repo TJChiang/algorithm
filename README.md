@@ -23,6 +23,7 @@
 - [0226.Invert Binary Tree](leetcode/0226-Invert_Binary_Tree/README.md)
 - [0232.Implement Queue using Stack](leetcode/0232-Implement_Queue_using_Stacks/README.md)
 - [0239.Sliding Window Maximum](leetcode/0239-Sliding_Window_Maximum/README.md)
+- [0242.Valid Anagram](leetcode/0242-Valid_Anagram/README.md)
 - [0344.Reverse String](leetcode/0344-Reverse_String/README.md)
 - [0347.Top K Frequent Elements](leetcode/0347-Top_K_Frequent_Elements/README.md)
 - [0541.Reverse String II](leetcode/0541-Reverse_String_II/README.md)
