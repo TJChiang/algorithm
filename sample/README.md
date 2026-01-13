@@ -45,5 +45,5 @@ public:
 }
 ```
 
-- 時間複雜度：
-- 空間複雜度：
+- Time Complexity：
+- Space Complexity：
