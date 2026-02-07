@@ -4,33 +4,33 @@
 
 [LeetCode]()
 
-[參考](https://github.com/youngyangyang04/leetcode-master)
-
 Problem Context
 
 ...
 
 ...
 
-**範例 1**
+**Example 1**
+
 ```
 Input: ...
 Output: ...
 Explanation: ...
 ```
 
-**範例 2**
+**Example 2**
+
 ```
 Input: ...
 Output: ...
 Explanation: ...
 ```
 
-**限制邊界**
+**Constraints**
 - ...
 - ...
 
-## 思路
+## Approach
 
 ### Solution 1
 content...
